@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursery Classification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nursery Admission Prediction</h1>
+        <form id="prediction-form">
+            <h3>Choose your Predict Model:</h2>
+            <label>Model:</label>
+            <select id="model">
+                <option value="svm">SVM</option>
+                <option value="knn">K-Nearest Neighbors (KNN)</option>
+                <option value="naive_bayes">Naive Bayes</option>
+                <option value="decision_tree">Decision Tree</option>
+                <option value="random_forest">Random Forest</option>
+            </select>
+            <h3>Choose your attribute to predict:</h2>
+            <label>Parents:</label>
+            <select id="parents">
+                <option value="usual">Usual</option>
+                <option value="pretentious">Pretentious</option>
+                <option value="great_pret">Great Pretentious</option>
+            </select>
+
+            <label>Has Nurse:</label>
+            <select id="has_nurs">
+                <option value="proper">Proper</option>
+                <option value="less_proper">Less Proper</option>
+                <option value="improper">Improper</option>
+                <option value="critical">Critical</option>
+                <option value="very_crit">Very Critical</option>
+            </select>
+
+            <label>Form:</label>
+            <select id="form">
+                <option value="complete">Complete</option>
+                <option value="completed">Completed</option>
+                <option value="incomplete">Incomplete</option>
+                <option value="foster">Foster</option>
+            </select>
+
+            <label>Children:</label>
+            <select id="children">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="more">More</option>
+            </select>
+
+            <label>Housing:</label>
+            <select id="housing">
+                <option value="convenient">Convenient</option>
+                <option value="less_conv">Less Convenient</option>
+                <option value="critical">Critical</option>
+            </select>
+
+            <label>Finance:</label>
+            <select id="finance">
+                <option value="convenient">Convenient</option>
+                <option value="inconv">Inconvenient</option>
+            </select>
+
+            <label>Social:</label>
+            <select id="social">
+                <option value="nonprob">Non Problematic</option>
+                <option value="slightly_prob">Slightly Problematic</option>
+                <option value="problematic">Problematic</option>
+            </select>
+
+            <label>Health:</label>
+            <select id="health">
+                <option value="recommended">Recommended</option>
+                <option value="priority">Priority</option>
+                <option value="not_recom">Not Recommended</option>
+            </select>
+
+            <button type="button" onclick="predict()">Predict</button>
+        </form>
+        <h3 id="result"></h3>
+        <div id="probabilities-chart-container" style="width: 400px; height: 300px;">
+        <canvas id="probabilities-chart"></canvas>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes"></script>
+    <script src="script.js"></script>
+</body>
+</html>
